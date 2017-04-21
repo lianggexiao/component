@@ -1,0 +1,49 @@
+#http: //docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+
+#debug: true
+
+server: 
+  port: 8889
+
+spring: 
+#----DataSource
+  datasource: 
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://10.2.30.96:3306/test?useUnicode=true&characterEncoding=UTF-8&useSSL=true
+    username: root
+    password: 10jqka
+    driver-class-name: com.mysql.jdbc.Driver
+#----DataSourceConfig----------------------
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+    filters: stat,wall,log4j
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+#    useGlobalDataSourceStat: true
+#----redis  
+  redis: 
+    database: 0
+    hostName: 127.0.0.1
+    port: 6379
+    password: 
+    pool.maxActive: 8
+    pool.maxWait: -1
+    pool.maxIdle: 8
+    pool.minIdle: 0
+    timeout: 0
+
+#----mybatis xml
+mybatis: 
+  typeAliasesPackage: com.qing.simpleframe.domain
+#  config: classpath: config/sqlMapConfig.xml
+  mapperLocations: classpath:mybatis/*.xml
+
