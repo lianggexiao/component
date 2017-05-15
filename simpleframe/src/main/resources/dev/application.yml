@@ -9,9 +9,9 @@ spring:
 #----DataSource
   datasource: 
     type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://10.2.30.96:3306/test?useUnicode=true&characterEncoding=UTF-8&useSSL=true
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8&useSSL=true
     username: root
-    password: 10jqka
+    password: 123456
     driver-class-name: com.mysql.jdbc.Driver
 #----DataSourceConfig----------------------
     initialSize: 5
@@ -32,13 +32,14 @@ spring:
 #----redis  
   redis: 
     database: 0
-    hostName: 127.0.0.1
+    hostName: 192.168.43.128
     port: 6379
-    password: 
+    password:
+    pool.MaxTotal: 100
     pool.maxActive: 8
-    pool.maxWait: -1
-    pool.maxIdle: 8
-    pool.minIdle: 0
+    pool.MaxWaitMillis: 10000
+    pool.maxIdle: 20
+    pool.minIdle: 8
     timeout: 0
 
 #----mybatis xml

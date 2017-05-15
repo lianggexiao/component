@@ -9,7 +9,7 @@
     </resultMap>
 	<insert id="insertOne" parameterType="com.qing.simpleframe.domain.entity.User">
 		insert into
-		USER
+		T_USER
 		(
 		id,
 		name,
@@ -21,7 +21,7 @@
 	
 	<select id="findByName" resultMap="User" parameterType="java.lang.String">
         select id , name , age
-        from user
+        from t_user
         where name = #{name}
     </select>
 </mapper>

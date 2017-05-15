@@ -8,12 +8,12 @@ import org.springframework.transaction.annotation.Transactional;
 import com.qing.simpleframe.domain.entity.User;
 
 @Transactional
-@CacheConfig(cacheNames = "users")
+//@CacheConfig(cacheNames = "users")
 public interface DemoRepository {
 
-    @Cacheable(key = "#p0")
+//    @Cacheable(key = "#p0")
     User findByName(String name);
     
-    @CachePut(key = "#p0.name")
+//    @CachePut(key = "#p0.name")
     void insertOne(User user);
 }

@@ -9,10 +9,7 @@ import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.Range;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.qing.simpleframe.domain.BaseResult;
 import com.qing.simpleframe.domain.dto.UserDTO;
@@ -23,7 +20,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import springfox.documentation.annotations.ApiIgnore;
 
-/** 
+/** //   @ApiIgnore
  * @author 柳青
  * @date 创建时间：2017年4月21日 上午11:27:25
  */
@@ -35,9 +32,11 @@ public class DemoController {
     @Autowired
 	DemoService demoService;
 	
-    @ApiIgnore
-	@RequestMapping(value="/save",method = RequestMethod.GET)  
-    public BaseResult<String> save(@Validated UserDTO userDTO){ 
+
+
+	@ApiOperation(value="保存用户", notes="保存用户")
+	@RequestMapping(value="/save",method = {RequestMethod.POST,RequestMethod.GET})
+    public BaseResult<String> save(@Validated @ModelAttribute UserDTO userDTO){
 	    User user = new User();
 	    user.setId(UUID.randomUUID().toString());
 	    user.setName(userDTO.getName());
@@ -47,7 +46,7 @@ public class DemoController {
     }  
 	
 	@ApiOperation(value="查询用户", notes="用户名查询用户")
-	@RequestMapping(value="/get",method = RequestMethod.GET)  
+	@RequestMapping(value="/getByName",method = RequestMethod.GET)
     public BaseResult<User> getByName(@Length(min=3, max=20, message="用户名长度只能在3-20之间")
 										  @RequestParam(name = "name", required = true)String name){
 	    User user = demoService.findByName(name) ;
