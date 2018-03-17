@@ -9,10 +9,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.qing.minisys.domain.BaseResult;
 
-/** 
- * @author 柳青
- * @date 创建时间：2017年4月21日 下午7:22:11
- */
 @ControllerAdvice
 public class GlobalExceptionHandler {
 

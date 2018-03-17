@@ -1,6 +1,5 @@
 package com.qing.minisys.domain;
 
-
 public class BaseResult<T> {
 
     public static final int SUCCESS = 200;

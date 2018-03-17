@@ -1,4 +1,5 @@
 package com.qing.minisys.interceptor;
+
 import org.aspectj.lang.annotation.Aspect;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * @desc 请求日志打印，在每个http请求前，和请求响应（或异常）后，均打印日志，记录这个请求的入参、出参、异常信息
+ * 方法进出之前打印日志
  */
 @Aspect
 public class WebLogInterceptor implements HandlerInterceptor {

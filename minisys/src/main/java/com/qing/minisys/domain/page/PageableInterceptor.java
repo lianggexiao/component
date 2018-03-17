@@ -24,7 +24,7 @@ public class PageableInterceptor {
     private final Logger logger = LoggerFactory.getLogger(PageableInterceptor.class);
 
     /*
-     * 拦截所有业务层方法
+     * 需要拦截的方法
      */
     private final static String EXPRESS = "execution(* com.qing..service..*(..))";
 

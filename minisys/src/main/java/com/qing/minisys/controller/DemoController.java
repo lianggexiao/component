@@ -1,6 +1,5 @@
 package com.qing.minisys.controller;
 
-import java.util.List;
 import java.util.UUID;
 
 import com.qing.minisys.domain.RequestDTO;
@@ -22,8 +21,6 @@ import io.swagger.annotations.ApiOperation;
 
 /**
  * 具体的调用请打开Postman，上面有例子
- * @author 柳青
- * @date 创建时间：2017年4月21日 上午11:27:25
  */
 @Api("Demo类")
 @RestController
@@ -84,15 +81,4 @@ public class DemoController {
         return BaseResult.buildRestResult(userPage);
     }
 
-//    public static void main(String[] args){
-//        RequestDTO<UserDTO> requestDTO = new RequestDTO<>();
-//        requestDTO.setIp("127.0.0.1");
-//        requestDTO.setRequestTime("123456");
-//        UserDTO userDTO = new UserDTO();
-//        userDTO.setName("冯亮");
-//        userDTO.setAge(33);
-//        requestDTO.setReqdata(userDTO);
-//        String json = JSONObject.toJSONString(requestDTO);
-//        System.out.println(json);
-//    }
 }

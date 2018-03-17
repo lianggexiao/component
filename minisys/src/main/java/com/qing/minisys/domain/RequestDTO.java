@@ -7,9 +7,6 @@ public class RequestDTO<T> {
 
     private String requestTime;
     private String ip;
-    /*
-     * 业务参数对象
-     */
     private T reqdata;
 
     public String getRequestTime() {

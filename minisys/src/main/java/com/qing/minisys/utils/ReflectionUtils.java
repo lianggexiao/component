@@ -7,7 +7,7 @@ import java.lang.reflect.Modifier;
 import java.lang.reflect.Parameter;
 
 /**
- * @Desc 反射相关的工具类
+ * @Desc 反射工具类
  */
 public class ReflectionUtils {
 

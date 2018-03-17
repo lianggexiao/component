@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Map;
 /**
  * 分页数据对象，组装分页需要的数据
- * @author wurong
  */
 public class Page<T> {
 
